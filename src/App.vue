@@ -1,17 +1,38 @@
 <template>
   <div id="app">
-    <navigation></navigation>
+    <Navigation :toggleCartModal="toggleCartModal" />
+    <MapComponent />
+    <CheckoutComponent
+      :showCartModal="showCartModal"
+      :toggleCartModal="toggleCartModal"
+    />
     <router-view />
   </div>
 </template>
 
 <script>
-import navigation from "@/components/NavbarComponent.vue";
+import Navigation from "@/components/Navbar.vue";
+import CheckoutComponent from "@/components/Checkout.vue";
+import MapComponent from "@/components/Map.vue";
 
 export default {
   name: "App",
   components: {
-    navigation,
+    Navigation,
+    CheckoutComponent,
+    MapComponent,
+  },
+
+  data() {
+    return {
+      showCartModal: false,
+    };
+  },
+
+  methods: {
+    toggleCartModal() {
+      this.showCartModal = !this.showCartModal;
+    },
   },
 };
 </script>
