@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     products: [],
     cart: [],
+    
   },
 
   getters: {
@@ -47,8 +48,8 @@ export default new Vuex.Store({
       });
     },
 
-    popProductFromCart(state) {
-      state.cart.pop();
+    popProductFromCart(state, product_id) {
+      state.cart = state.cart.filter((cartItem) => cartItem.id !== product_id);
     },
 
     removeAllProducts(state) {

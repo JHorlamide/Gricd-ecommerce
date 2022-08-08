@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative z-10"
+    class="relative z-50"
     aria-labelledby="slide-over-title"
     role="dialog"
     aria-modal="true"
@@ -86,10 +86,10 @@
                     <p>NGN {{ formatCurrency(total) }}</p>
                   </div>
                 </div>
-                <div class="mt-6 flex justify-evenly space-x-5">
+                <div class="mt-6 flex flex-col justify-evenly space-y-5">
                   <button
                     @click="checkout"
-                    class="flex items-center justify-center rounded-md border border-transparent bg-green-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-green-700"
+                    class="flex items-center justify-center rounded-md border border-transparent bg-green-600 px-6 py-3 text-base font-bold text-white shadow-sm hover:bg-green-700"
                   >
                     Checkout
                   </button>
@@ -97,7 +97,7 @@
                   <button
                     href="#"
                     @click="removeCartProducts"
-                    class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-base font-medium text-white shadow-sm"
+                    class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-base font-bold text-white shadow-sm"
                   >
                     Clear Cart
                   </button>
