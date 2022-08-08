@@ -19,47 +19,43 @@
             <div
               class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl"
             >
-              <!-- CART HEADER START -->
-              <div class="flex items-start justify-between px-3 mt-3">
-                <h2
-                  class="text-xl font-medium text-gray-900"
-                  id="slide-over-title"
-                >
-                  Shopping cart
-                </h2>
-
-                <div class="ml-3 flex h-7 items-center">
-                  <button
-                    type="button"
-                    class="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                    @click="toggleCartModal"
-                  >
-                    <span class="sr-only">Close panel</span>
-                    <svg
-                      class="h-6 w-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="2"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <!-- CART HEADER END -->
-
-              <!-- MAP -->
-              <UserMap />
-
               <!-- CART CONTENT -->
               <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
+                <!-- CART HEADER START -->
+                <div class="flex items-start justify-between px-3 mt-3">
+                  <h2
+                    class="text-xl font-medium text-gray-900"
+                    id="slide-over-title"
+                  >
+                    Shopping cart
+                  </h2>
+
+                  <div class="ml-3 flex h-7 items-center">
+                    <button
+                      type="button"
+                      class="-m-2 p-2 text-gray-400 hover:text-gray-500"
+                      @click="toggleCartModal"
+                    >
+                      <span class="sr-only">Close panel</span>
+                      <svg
+                        class="h-6 w-6"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!-- CART HEADER END -->
                 <div class="mt-8">
                   <div v-if="isCartEmpty" class="text-center">
                     <p class="bg-washed-red pv3 ph2 br2">Your cart is empty!</p>
@@ -132,11 +128,10 @@
 <script>
 import CartItem from "./CartItem.vue";
 import { formatCurrency } from "@/helper/formatCurrency";
-import UserMap from "./UserMap.vue";
 
 export default {
   name: "CheckoutComponent",
-  components: { CartItem, UserMap },
+  components: { CartItem },
   props: {
     showCartModal: Boolean,
     toggleCartModal: Function,
