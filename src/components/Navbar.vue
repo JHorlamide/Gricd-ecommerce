@@ -24,9 +24,9 @@
           <button
             @click="toggleCartModal"
             type="button"
-            class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white"
           >
-            Cart <span>{{ cartNumber || 0 }}</span>
+            Cart <span class="bg-gray-600 rounded-full px-6 py-5 ml-2 text-white">{{ cartNumber || 0 }}</span>
           </button>
         </div>
       </div>
@@ -51,7 +51,7 @@
             type="button"
             class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
           >
-            Cart <span>{{ cartNumber || 0 }}</span>
+            Cart <span class="bg-indigo-600 rounded-xl">{{ cartNumber || 0 }}</span>
           </button>
         </div>
       </div>
