@@ -62,6 +62,7 @@ export default {
     cartProduct: Object,
     removeProduct: Function,
   },
+  
   data() {
     return {
       product: this.cartProduct,
