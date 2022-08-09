@@ -77,7 +77,6 @@ export default {
   props: {
     products: Array,
     addProductToCart: Function,
-    showCart: Boolean,
   },
 
   computed: {

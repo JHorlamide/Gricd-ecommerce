@@ -3,7 +3,6 @@
     <ProductList
       :products="products"
       :addProductToCart="addProductToCart"
-      :showCart="showCart"
     />
   </div>
 </template>
@@ -14,11 +13,6 @@ import ProductList from "@/components/ProductList.vue";
 export default {
   name: "ProductPage",
   components: { ProductList },
-  data() {
-    return {
-      showCart: false,
-    };
-  },
 
   computed: {
     products() {
