@@ -3,7 +3,7 @@
   <div
     id="defaultModal"
     tabindex="-1"
-    class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center flex"
+    class="mt-4 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center flex"
     aria-modal="true"
     role="dialog"
     v-show="showMapModal"
