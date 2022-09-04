@@ -39,6 +39,7 @@
         <div
           class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600"
         >
+          <!-- Map Component -->
           <UserMap />
         </div>
       </div>
@@ -48,12 +49,13 @@
 
 <script>
 import UserMap from "./UserMap.vue";
+
 export default {
   name: "MapModal",
   components: { UserMap },
   props: {
     showMapModal: Boolean,
-    toggleMapModal: Function
+    toggleMapModal: Function,
   },
 };
 </script>

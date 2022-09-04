@@ -3,9 +3,15 @@
     <div
       class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200"
     >
-      <img
+      <!-- <img
         :src="product.image.src"
         :alt="product.image.alt"
+        class="h-full w-full object-cover object-center"
+      /> -->
+
+      <img
+        :src="product.image"
+        :alt="product.name"
         class="h-full w-full object-cover object-center"
       />
     </div>
@@ -15,7 +21,7 @@
         <h3>
           <a href="#">{{ product.title }}</a>
         </h3>
-        <p class="ml-4">NGN{{ product.price }}</p>
+        <p class="ml-4">${{ product.price }}</p>
       </div>
 
       <div class="flex flex-1 items-end justify-between text-sm">
@@ -47,7 +53,7 @@
         <p class="text-gray-500">Total</p>
 
         <div class="flex">
-          <p class="text-sm">NGN {{ formatCurrency(itemTotal) }}</p>
+          <p class="text-sm">$ {{ formatCurrency(itemTotal) }}</p>
         </div>
       </div>
     </div>
@@ -62,7 +68,7 @@ export default {
     cartProduct: Object,
     removeProduct: Function,
   },
-  
+
   data() {
     return {
       product: this.cartProduct,
@@ -74,6 +80,7 @@ export default {
       return Number(this.product.price) * Number(this.product.quantity);
     },
   },
+
   methods: { formatCurrency },
 };
 </script>

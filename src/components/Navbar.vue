@@ -33,7 +33,10 @@
             >
           </button>
 
-          <button @click="toggleMapModal" class="text-gray-400 hover:text-white">
+          <button
+            @click="toggleMapModal"
+            class="text-gray-400 hover:text-white"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -47,6 +50,22 @@
                 d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"
               />
             </svg>
+          </button>
+
+          <button
+            @click="toggleUploadModal"
+            type="button"
+            class="text-white font-semibold bg-yellow-500 px-4 py-3 rounded-lg"
+          >
+            Upload Products
+          </button>
+        
+          <button
+            @click="downloadProduct"
+            type="button"
+            class="text-white font-semibold bg-gray-500 px-4 py-3 rounded-lg"
+          >
+            Download Product
           </button>
         </div>
       </div>
@@ -88,7 +107,9 @@ export default {
   name: "NavbarComponent",
   props: {
     toggleCartModal: Function,
-    toggleMapModal: Function
+    toggleMapModal: Function,
+    toggleUploadModal: Function,
+    downloadProduct: Function
   },
 
   computed: {

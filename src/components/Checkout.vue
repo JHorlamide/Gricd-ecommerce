@@ -83,9 +83,10 @@
                 >
                   <p>Subtotal</p>
                   <div :v-if="isCartEmpty">
-                    <p>NGN {{ formatCurrency(total) }}</p>
+                    <p>$ {{ formatCurrency(total) }}</p>
                   </div>
                 </div>
+
                 <div class="mt-6 flex flex-col justify-evenly space-y-5">
                   <button
                     @click="checkout"
@@ -102,6 +103,7 @@
                     Clear Cart
                   </button>
                 </div>
+                
                 <div
                   class="mt-6 flex justify-center text-center text-sm text-gray-500"
                 >

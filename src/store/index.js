@@ -1,4 +1,4 @@
-import fetchProduct from "@/api/fetchProduct";
+import { fetchProducts } from "@/api/products";
 import Vue from "vue";
 import Vuex from "vuex";
 
@@ -8,7 +8,6 @@ export default new Vuex.Store({
   state: {
     products: [],
     cart: [],
-    
   },
 
   getters: {
@@ -31,6 +30,7 @@ export default new Vuex.Store({
       return state.cart.length;
     },
   },
+
   mutations: {
     setProducts(state, products) {
       state.products = products;
@@ -49,7 +49,9 @@ export default new Vuex.Store({
     },
 
     popProductFromCart(state, product_id) {
-      state.cart = state.cart.filter((cartItem) => cartItem.id !== product_id);
+      state.cart = state.cart.filter((cartItem) => {
+        return cartItem._id !== product_id;
+      });
     },
 
     removeAllProducts(state) {
@@ -70,20 +72,26 @@ export default new Vuex.Store({
       cartItem.product_price = cartItem.quantity * product.price;
     },
   },
+
   actions: {
-    fetchProducts({ commit }) {
-      return new Promise((resolve) => {
-        fetchProduct.getProducts((products) => {
-          commit("setProducts", products);
-          resolve();
-        });
-      });
+    // fetchProducts({ commit }) {
+    //   return new Promise((resolve) => {
+    //     getProducts((products) => {
+    //       commit("setProducts", products);
+    //       resolve();
+    //     });
+    //   });
+    // },
+
+    async fetchProducts({ commit }) {
+      const { data } = await fetchProducts();
+      commit("setProducts", data);
     },
 
     addProductToCart(context, product) {
       if (product.quantity > 0) {
         const cartItem = context.state.cart.find(
-          (item) => item.id === product.id
+          (item) => item._id === product._id
         );
 
         if (!cartItem) {
@@ -95,7 +103,7 @@ export default new Vuex.Store({
     },
 
     removeProduct(context, product) {
-      context.commit("popProductFromCart", product.id);
+      context.commit("popProductFromCart", product._id);
       context.commit("incrementProductInventory", product);
     },
 
