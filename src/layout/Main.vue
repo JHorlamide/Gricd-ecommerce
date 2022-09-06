@@ -30,7 +30,6 @@ import MapModal from "@/components/MapModal.vue";
 import UploadModal from "@/components/UploadModal.vue";
 
 import { downloadProductSheet } from "@/api/products";
-// const API_URL_DEV = process.env.VUE_APP_API_URL_DEV;
 
 export default {
   name: "App",
@@ -61,20 +60,6 @@ export default {
     toggleUploadModal() {
       this.showUploadModal = !this.showUploadModal;
     },
-
-    // async downloadProduct() {
-    //   fetch(`${API_URL_DEV}/download`)
-    //     .then((res) => {
-    //       return res.blob();
-    //     })
-    //     .then((data) => {
-    //       let docUrl = document.createElement("a");
-    //       docUrl.href = window.URL.createObjectURL(data);
-    //       docUrl.download = "filename.xlsx";
-    //       document.body.appendChild(docUrl)
-    //       docUrl.click();
-    //     });
-    // },
 
     async downloadProduct() {
       downloadProductSheet();
