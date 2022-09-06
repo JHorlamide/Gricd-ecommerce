@@ -8,7 +8,9 @@
       </h2>
 
       <!-- APP LOADER -->
-      <AppLoader v-show="isLoadingProducts" />
+      <!-- <AppLoader v-show="isLoadingProducts" /> -->
+
+      <p v-show="isLoadingProducts">No product available</p>
 
       <div
         class="mt-6 grid grid-cols-1 gap-y-20 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
@@ -74,11 +76,11 @@
 
 <script>
 import { formatCurrency } from "@/helper/formatCurrency";
-import AppLoader from "./AppLoader.vue";
+// import AppLoader from "./AppLoader.vue";
 
 export default {
   name: "ProductList",
-  components: { AppLoader },
+  // components: { AppLoader },
   props: {
     products: Array,
     addProductToCart: Function,

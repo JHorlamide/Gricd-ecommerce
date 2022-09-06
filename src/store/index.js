@@ -1,5 +1,5 @@
 import { fetchProducts } from "@/api/products";
-import products_list from '@/api/data.json'
+// import products_list from "@/api/data.json";
 import Vue from "vue";
 import Vuex from "vuex";
 
@@ -34,7 +34,7 @@ export default new Vuex.Store({
 
   mutations: {
     setProducts(state, products) {
-      state.products = [...products_list, products];
+      state.products = products;
     },
 
     pushProductToCart(state, product) {
